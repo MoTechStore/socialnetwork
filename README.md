@@ -1,4 +1,8 @@
 
+Check out full tutorial here : https://www.youtube.com/watch?v=UbF4srCAf0c&t=139s 
+Do not forget to subscribe
+
+Django 3 Social Network | Social media
 
 1. Create project motechapp - django-admin startproject motechapp
 2. Change directory (cd motechapp)and create app core - django-admin startapp core
