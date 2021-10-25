@@ -47,5 +47,5 @@ a.save()
 
 
 
-![alt text](https://github.com/MoTechStore/Django-E-Learning-System/blob/master/thumb.png)	
+![alt text](https://github.com/MoTechStore/socialnetwork/blob/main/thumbnail.jpg)	
    
