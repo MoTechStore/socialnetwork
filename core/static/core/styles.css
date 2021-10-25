@@ -1,0 +1,12 @@
+body{
+	background: white url("images/background.jpg")
+}
+.navbar{
+	border-radius: 0 px;
+	-webkit-border-radius: 0 px;
+	-moz-border-radius: 0 px;
+
+}
+.navbar-brand{
+	font-family: 'Satisfy', cursive;
+}

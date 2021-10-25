@@ -1,0 +1,81 @@
+{%extends 'core/base2.html'%}
+{% block body %}
+
+
+{% load static %}
+
+  <style type="text/css">
+    #bg{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+  }
+  </style>
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'core/bootstrap.min.css' %}">
+
+
+    <div class="container-fluid" style="padding-top: 110px">
+    	<div class="row">
+    		
+
+    		<div class="col-sm-4">
+    			
+    		</div>
+
+
+
+
+
+    		<div class="col-sm-3">
+
+
+    			 <div class="page">
+      <div class="page-single">
+        <div class="container">
+          <div class="row">
+            <div class="col col-login mx-auto">
+              <div class="text-center mb-6">
+                <img src="./assets/brand/tabler.svg" class="h-6" alt="">
+              </div>
+              <div class="card" style="background-color: #184a45">
+                <div class="card-body p-6">
+                  <div class="card-title text-center" style="color: white">You have been logged out</div>
+                  <br><br><br>
+                 <div class="text-center text-muted">
+                <a href="{% url 'index' %}" style="color: #fcf66a">Click Here Login </a>
+              </div> 
+                
+                
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+                      
+ 
+   
+        </div>
+
+
+    			
+
+
+
+
+
+
+    		<div class="col-sm-4">
+    			
+    		</div>
+    	</div>
+
+
+    </div>
+
+
+{% endblock %}    

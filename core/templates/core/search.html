@@ -1,0 +1,125 @@
+{%extends 'core/base3.html'%}
+
+{% load crispy_forms_tags %}
+{% block body %}
+
+
+{% load static %}
+
+
+  <style type="text/css">
+    #bg{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+  }
+  </style>
+
+
+
+    <link href="{%static 'core/dashboard.css'%}" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{% static 'core/bootstrap.min.css' %}">
+
+
+<div class="container-fluid">
+    <div class="row">
+        
+        <div class="col-sm-3"></div>
+
+
+        <div class="col-sm-6" style="padding-top: 70px">
+
+               <div class="card mb-3">
+                <div class="card-body">
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                   
+
+                        {% if files %}
+                        <center><h3 style="text-align:center; color: #FCF66AFF; background: #184A45FF; width: 400px" id="answer">Search Results</h3></center>
+
+
+                         {% for file in files %}
+
+                         <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>View Profile</th>
+                                
+                        
+                  
+                            </tr>
+                            </thead>
+                            <tbody>
+                           
+                               <tr>
+                                    <td>{{ file.username }}</td>
+                                    <td>
+                                        <a href="{% url 'profile' file.username %}"><button type="button" class="btn btn-primary">View Profile</button></a>
+                                    </td> 
+                                </tr>
+                            {% endfor %}
+                        {%else%}
+
+
+
+
+<center><h3 style="text-align:center; color: #FCF66AFF; background: #184A45FF; width: 400px" id="answer">No Search Found</h3></center>
+
+                <style type="text/css">
+                  #search_result {
+                 display: none;
+                 }
+    </style>
+
+                       {%endif%}    
+                            </tbody>
+                        </table>
+
+                        {% if files.has_other_pages %}
+    <ul class="pagination">
+        {% if files.has_previous %}
+            <li class="waves-effect"><a href="?page=
+                    {{ files.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}"><i
+                    class="material-icons text-primary">&laquo;</i></a></li>
+        {% else %}
+            <li class="disabled"><a href="#!"><i class="material-icons text-primary">&laquo;</i></a></li>
+        {% endif %}
+        {% for num in files.paginator.page_range %}
+            {% if files.number == num %}
+                <li class="active"><a href="#!">{{ num }}</a></li>
+            {% else %}
+                <li class="waves-effect"><a
+                        href="?page={{ num }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">{{ num }}</a></li>
+            {% endif %}
+        {% endfor %}
+        {% if files.has_next %}
+            <li class="waves-effect"><a
+                    href="?page={{ files.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}"><i
+                    class="material-icons">&raquo;</i></a></li>
+        {% else %}
+            <li class="disabled"><a href="#!"><i class="material-icons">&raquo;</i></a></li>
+        {% endif %}
+    </ul>
+{% endif %}
+
+
+
+
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+
+        <div class="col-sm-3"></div>
+
+    </div>
+</div>
+{% endblock %}    

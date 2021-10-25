@@ -1,0 +1,169 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MotechApp</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+
+  <link href="{% static 'core/bootstrap/three/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+<link href="{% static 'core/bootstrap/four/css/bootstrap.min.css' %}" rel="stylesheet">
+ 
+
+
+
+  <style type="text/css">
+    #bg{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+  }
+  </style>
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #184A45FF;color: #FCF66AFF">
+        <a class="navbar-brand" href="{% url 'welcome' %}" style="color: #FCF66AFF">MotechApp</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'welcome' %}" style="color: #FCF66AFF">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'welcome' %}" style="color: #FCF66AFF">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'feed' %}" style="color: #FCF66AFF">Feeds</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#"></a>
+              </li>
+
+        
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+            </li>
+          </ul>
+      
+       <form action="{% url 'search' %}" class="d-flex" method="GET" style="align-content: right;">
+                    <input name="q" class="form-control me-2" type="search" placeholder="FInd A Friend Here" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" style="color: #184A45FF; background-color: #FCF66AFF;">Search</button>
+                  </form>
+
+                  <ul class="navbar-nav ml-auto ml-md-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%  url 'logout' %}" style="color: #FCF66AFF">Logout</a>
+                      </li>
+
+                </ul>
+         
+      
+      
+        </div>
+      </nav>
+
+
+
+<body id="bg">
+
+
+
+
+
+{% block body %}
+{% endblock %}
+
+
+
+<style>
+#footer{
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   height: 60px;
+   width: 100%;
+   background-color: #184a45;
+   color: #fcf66a;
+   text-align: center;
+}
+</style>
+
+
+
+    <footer style="background-color: #FCF66AFF;color: #FCF66AFF">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="widget">
+                        <div class="foot-logo">
+                            <div class="logo">
+                                <a href="" title=""><img src="images/logo.png" alt=""></a>
+                            </div>  
+                            <p>
+                                
+                            </p>
+                        </div>
+                        <ul class="location">
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <div class="widget">
+                        <div class="widget-title"><h4>Follow Us</h4></div>
+                        <ul class="list-style" style="color: #184A45FF">
+                            <li style="color: #184A45FF;"><i class="" ></i> <a style="color: #184A45FF;" href="" title="">facebook</a></li>
+                            <li><i class=""></i><a style="color: #184A45FF;" href="https://twitter.com/MotechApp" title="">twitter</a></li>
+                            <li><i class=""></i><a style="color: #184A45FF;" href="https://www.instagram.com/motechapp/" title="">instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <div class="widget">
+                        <div class="widget-title"><h4>Navigate</h4></div>
+                        <ul class="list-style" style="color: #184A45FF;">
+                            <li><a href="" title="" style="color: #184A45FF;">about us</a></li>
+                            <li><a href="" title="" style="color: #184A45FF;">contact us</a></li>
+                            <li><a href="" disabled title="" style="color: #184A45FF;">terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <div class="widget">
+                        <div class="widget-title"><h4>Desk Help</h4></div>
+                        <ul class="list-style" style="color: #184A45FF;">
+                            <li><a href="#" title="" style="color: #184A45FF;">motechapp@gmail.com</a></li>
+                            <li><a href="#" title="" style="color: #184A45FF;">github</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer><!-- footer -->
+    <div class="bottombar" style="background-color: #184A45FF;color: #30B8B4FF">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <center><p style="color: #FCF66AFF">MotechApp 2021 &copy; All Right Reserved</p></center>
+        
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
